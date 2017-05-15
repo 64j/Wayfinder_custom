@@ -520,8 +520,6 @@ class Wayfinder {
 	}
 
 	function buildMenu() {
-		global $modx;
-
 		//Loop through all of the menu levels
 		foreach($this->docs as $level => $subParents) {
 			//Loop through each document group (grouped by parent doc)
@@ -530,7 +528,6 @@ class Wayfinder {
 				if($this->_config['hideSubMenus'] && !$this->isHere($parentId) && 1 < $level) {
 					continue;
 				}
-
 				//Build the output for the group of documents
 				$menuPart = $this->buildSubMenu($subDocs, $level);
 				//If we are at the top of the menu start the output, otherwise replace the wrapper with the submenu
@@ -800,7 +797,6 @@ class Wayfinder {
 	}
 
 	function setItemClass($classType, $docId = 0, $first = 0, $last = 0, $level = 0, $isFolder = 0, $type = 'document') {
-		global $modx;
 
 		$classNames = array();
 		$class = &$this->_css;
