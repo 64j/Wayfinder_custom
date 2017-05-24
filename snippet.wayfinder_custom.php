@@ -113,7 +113,7 @@ $wf->_templates = array(
 );
 
 foreach ($modx->event->params as $key => $value) {
-	if (strpos($value, 'Tpl') !== false) {
+	if (strpos($key, 'Tpl') !== false) {
 		$wf->_templates[$key] = $value;
 	}
 }
