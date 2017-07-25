@@ -1,6 +1,6 @@
 <?php
 /**
- * Wayfinder
+ * Wayfinder_custom
  *
  * Completely template-driven and highly flexible menu builder
  *
@@ -17,7 +17,7 @@
  * @author      Kyle Jaebker http://muddydogpaws.com
  * @author      Ryan Thrash http://thrash.me
  * @author      and many others since 2006
- * @lastupdate  23/05/2016
+ * @lastupdate  15/06/2017
  */
 if(!defined('MODX_BASE_PATH')) {
 	die('What are you doing? Get out of here!');
