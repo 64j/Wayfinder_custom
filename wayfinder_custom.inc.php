@@ -529,7 +529,7 @@ class Wayfinder {
 					continue;
 				}
 				//Build the output for the group of documents
-				$menuPart = $this->buildSubMenu($subDocs, $level);
+				$menuPart = $this->buildSubMenu($subDocs, $level, $parentId);
 				//If we are at the top of the menu start the output, otherwise replace the wrapper with the submenu
 				if(($level == 1 && (!$this->_config['displayStart'] || $this->_config['id'] == 0)) || ($level == 0 && $this->_config['displayStart'])) {
 					$output = $menuPart;
@@ -546,7 +546,7 @@ class Wayfinder {
 		return in_array($did, $this->parentTree);
 	}
 
-	function buildSubMenu($subDocs, $level) {
+	function buildSubMenu($subDocs, $level, $parentId) {
 		global $modx;
 
 		$subMenuOutput = '';
@@ -599,6 +599,7 @@ class Wayfinder {
 		$ph['wf.classes'] = $classNames ? sprintf(' class="%s"', $classNames) : '';
 		$ph['wf.classnames'] = $classNames;
 		$ph['wf.level'] = $level;
+		$ph['wf.id'] = $parentId;
 
 		//Determine which wrapper template to use
 		if($this->_templates['innerTpl'] && $wrapperClass == 'innercls') {
